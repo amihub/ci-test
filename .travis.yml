@@ -3,7 +3,7 @@ language: c
 compiler:
 - gcc
 
-script: make clean all test
+script: make clean all
 
 env:
   global:
