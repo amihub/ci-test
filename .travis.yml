@@ -17,6 +17,6 @@ addons:
       name: "amihub/coverity-test"
       description: "Build submitted via Travis CI"
     notification_email: amihub7@gmail.com
-    build_command_prepend: "make clean all"
-    build_command:   "make test"
+    build_command_prepend: "make clean"
+    build_command: "make"
     branch_pattern: coverity_scan
