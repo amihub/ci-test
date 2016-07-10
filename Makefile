@@ -13,6 +13,9 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
+test: all
+	./$(TARGET)
+
 clean:
 	rm -f $(OBJS) $(TARGET)
 

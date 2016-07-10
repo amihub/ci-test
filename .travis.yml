@@ -1,4 +1,22 @@
 language: c
+
 compiler:
 - gcc
+
 script: make
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "B45prwEMhlWzqVniiKs9kg6zxBfsRSiNRrs+E5dMyew0cVyWV542bWP6H2s3nYnf1wxwAOnLW2gVsc+/CLIs90XewCnWKwni4/Nh+1MPL4K3oAP3Qdd8DgS14WU1cyBz5LUjH2VUH1G0sp61Qwr6XYX+QYWfkw/2LgGB3jC4b5BwZN1r80zPpzRgzUd/EFaXwoNwWUqdxtUFcN9Podg9okXXcjh3VLOJOFBzeZJTaLs5i8H5e9U13qv9C25nTo0EUXhqOEsl/ti25wNbr3+ZRNbIcXSfFZwq/oa5YanEYbiwEWM7KjS/DQPJpon9kQ9txqywTxvElH9TJa6Or9+IWx9s3CfTk4/Jf+UrYThmfOquBmQciEYY+4FVTt5iJTLvfUZhAz/Zw+5O2s2kNCCRhN8Mccw3vM4KrAhlt55TvjxSHXAstSBJwLrlP1MTYwow9yWgbJuQzRxgL/iA28Q8HoLV79DuFM/HbiYNGZRrNhT1JQEe1O96UrLeO8tuRDYoaRuaVE6tTn+Cn5PhHVAR6AZGnUShSb7fGCAo2vWV3/jXLWMSxVpFMbFPVrbnyJmlZHsoty5k+KY2Cu3fqPMrpANva1qp2jp9mwvfCILw1etpRksVA8xh39CrUnZV7ijNdw2SWfEnkB1Zi1zBmTAGh9CueP/bDaXnAdX9FzGdajQ="
+
+addons:
+  coverity_scan:
+    project:
+      name: "amihub/coverity-test"
+      description: "Build submitted via Travis CI"
+    notification_email: amihub7@gmail.com
+    build_command_prepend: ""
+    build_command:   "make"
+    branch_pattern: coverity_scan
