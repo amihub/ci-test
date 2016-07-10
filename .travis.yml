@@ -3,4 +3,4 @@ language: c
 compiler:
 - gcc
 
-script: make claen all test
+script: make clean all test
